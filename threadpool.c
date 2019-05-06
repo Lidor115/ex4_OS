@@ -10,12 +10,13 @@ void *threadFunc(ThreadPool *threadPool) {
     while (threadPool->isAlive == 1) {
         pthread_mutex_lock(&threadPool->mutex); // check if its here
         while (!osIsQueueEmpty(threadPool->osQueue) && threadPool->isAlive > 0) {
-            if(threadPool->isAlive == 2){
+            if (threadPool->isAlive == 2) {
                 pthread_mutex_unlock(&threadPool->mutex);
                 break;
             }
             myTask *task = osDequeue(threadPool->osQueue);
             task->computeFunc(task->param);
+            free(task);
             if (osIsQueueEmpty(threadPool->osQueue)) {
                 pthread_cond_wait(&threadPool->fill, &threadPool->mutex);
             }
@@ -64,8 +65,25 @@ ThreadPool *tpCreate(int numOfThreads) {
         perror("fail in malloc ThreadPool");
         exit(1);
     }
+    pthread_mutex_init(&threadPool->mutex, NULL);
+    pthread_cond_init(&threadPool->fill, NULL);
+    pthread_cond_init(&threadPool->empty, NULL);
     threadPool->isAlive = 1;
     initThredArray(numOfThreads, threadPool);
     return threadPool;
 }
 
+void tpDestroy(ThreadPool *threadPool, int shouldWaitForTasks) {
+    if (shouldWaitForTasks == 0) {
+        threadPool->isAlive = 0;
+        while (!osIsQueueEmpty(threadPool->osQueue)) {
+            myTask *task = osDequeue(threadPool->osQueue);
+            free(task);
+        }
+    } else {
+        threadPool->isAlive = 2;
+    }
+    //Todo check when to free the threads
+    //Todo - free the queue
+
+}
