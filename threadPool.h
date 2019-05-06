@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <stdbool.h>
 
 /*
 */
@@ -19,7 +18,7 @@ typedef struct {
 } myTask;
 
 typedef struct thread_pool {
-    bool isAlive;
+    int isAlive;
     pthread_cond_t empty, fill;
     pthread_mutex_t mutex;
     OSQueue *osQueue;
