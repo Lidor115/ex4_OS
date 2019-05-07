@@ -23,6 +23,7 @@ typedef struct thread_pool {
     pthread_mutex_t mutex;
     OSQueue *osQueue;
     pthread_t *threadArray;
+    int numOfThreads;
     //TODO - FILL THIS WITH YOUR FIELDS
 } ThreadPool;
 

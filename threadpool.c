@@ -65,6 +65,7 @@ ThreadPool *tpCreate(int numOfThreads) {
         perror("fail in malloc ThreadPool");
         exit(1);
     }
+    threadPool->numOfThreads = numOfThreads;
     pthread_mutex_init(&threadPool->mutex, NULL);
     pthread_cond_init(&threadPool->fill, NULL);
     pthread_cond_init(&threadPool->empty, NULL);
@@ -83,7 +84,15 @@ void tpDestroy(ThreadPool *threadPool, int shouldWaitForTasks) {
     } else {
         threadPool->isAlive = 2;
     }
-    //Todo check when to free the threads
-    //Todo - free the queue
-
+    pthread_cond_broadcast(&threadPool->fill);
+    pthread_cond_broadcast(&threadPool->empty);
+    int i;
+    for (i = 0; i < threadPool->numOfThreads; ++i) {
+        pthread_join(threadPool->threadArray[i],NULL);
+    }
+    pthread_cond_destroy(&threadPool->mutex);
+    pthread_cond_destroy(&threadPool->empty);
+    pthread_cond_destroy(&threadPool->fill);
+    free(threadPool->threadArray);
+    osDestroyQueue(threadPool->osQueue);
 }
