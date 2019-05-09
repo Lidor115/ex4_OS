@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "osqueue.h"
 #include "threadPool.h"
+#include <stdbool.h>
 
 
 void hello (void* a)
@@ -16,11 +18,10 @@ void test_thread_pool_sanity()
    
    ThreadPool* tp = tpCreate(5);
    
-   for(i=0; i<5; ++i)
+   for(i=0; i<10; ++i)
    {
       tpInsertTask(tp,hello,NULL);
    }
-   
    tpDestroy(tp,1);
 }
 

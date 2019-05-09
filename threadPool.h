@@ -7,10 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <stdbool.h>
 
 /*
 */
-
+typedef enum {DESTROY, WAIT, DONE, RUN} STATUS;
 typedef struct {
     void (*computeFunc)(void *);
 
@@ -18,18 +19,17 @@ typedef struct {
 } myTask;
 
 typedef struct thread_pool {
-    int isAlive;
-    pthread_cond_t empty, fill;
+    STATUS status;
+    pthread_cond_t fill;
     pthread_mutex_t mutex;
     OSQueue *osQueue;
     pthread_t *threadArray;
     int numOfThreads;
-    //TODO - FILL THIS WITH YOUR FIELDS
 } ThreadPool;
 
-void *threadFunc(ThreadPool *threadPool);
+void *threadFunc(void* func) ;
 
-void initThredArray(int num, ThreadPool *threadPool);
+void initThreadArray(int num, ThreadPool *threadPool);
 
 ThreadPool *tpCreate(int numOfThreads);
 

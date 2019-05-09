@@ -13,10 +13,14 @@ stdio.h
 -
 stdlib.h
 -
+unistd.h
+-
 osqueue.h
 /home/ubuntu19/Dropbox/ex3/osqueue.h
 threadPool.h
 /home/ubuntu19/Dropbox/ex3/threadPool.h
+stdbool.h
+-
 
 /home/ubuntu19/Dropbox/ex3/threadPool.h
 sys/types.h
@@ -31,8 +35,14 @@ stdlib.h
 -
 pthread.h
 -
+stdbool.h
+-
 
 /home/ubuntu19/Dropbox/ex3/threadpool.c
+unistd.h
+-
 threadPool.h
 /home/ubuntu19/Dropbox/ex3/threadPool.h
+string.h
+-
 

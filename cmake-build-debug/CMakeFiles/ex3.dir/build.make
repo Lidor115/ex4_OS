@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/69/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/70/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/69/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/70/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -57,22 +57,9 @@ include CMakeFiles/ex3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ex3.dir/flags.make
 
-CMakeFiles/ex3.dir/osqueue.c.o: CMakeFiles/ex3.dir/flags.make
-CMakeFiles/ex3.dir/osqueue.c.o: ../osqueue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex3.dir/osqueue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ex3.dir/osqueue.c.o   -c /home/ubuntu19/Dropbox/ex3/osqueue.c
-
-CMakeFiles/ex3.dir/osqueue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex3.dir/osqueue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu19/Dropbox/ex3/osqueue.c > CMakeFiles/ex3.dir/osqueue.c.i
-
-CMakeFiles/ex3.dir/osqueue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/osqueue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu19/Dropbox/ex3/osqueue.c -o CMakeFiles/ex3.dir/osqueue.c.s
-
 CMakeFiles/ex3.dir/test.c.o: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/test.c.o: ../test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex3.dir/test.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex3.dir/test.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ex3.dir/test.c.o   -c /home/ubuntu19/Dropbox/ex3/test.c
 
 CMakeFiles/ex3.dir/test.c.i: cmake_force
@@ -82,6 +69,19 @@ CMakeFiles/ex3.dir/test.c.i: cmake_force
 CMakeFiles/ex3.dir/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/test.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu19/Dropbox/ex3/test.c -o CMakeFiles/ex3.dir/test.c.s
+
+CMakeFiles/ex3.dir/osqueue.c.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/osqueue.c.o: ../osqueue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex3.dir/osqueue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ex3.dir/osqueue.c.o   -c /home/ubuntu19/Dropbox/ex3/osqueue.c
+
+CMakeFiles/ex3.dir/osqueue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex3.dir/osqueue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu19/Dropbox/ex3/osqueue.c > CMakeFiles/ex3.dir/osqueue.c.i
+
+CMakeFiles/ex3.dir/osqueue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex3.dir/osqueue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu19/Dropbox/ex3/osqueue.c -o CMakeFiles/ex3.dir/osqueue.c.s
 
 CMakeFiles/ex3.dir/threadpool.c.o: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/threadpool.c.o: ../threadpool.c
@@ -98,15 +98,15 @@ CMakeFiles/ex3.dir/threadpool.c.s: cmake_force
 
 # Object files for target ex3
 ex3_OBJECTS = \
-"CMakeFiles/ex3.dir/osqueue.c.o" \
 "CMakeFiles/ex3.dir/test.c.o" \
+"CMakeFiles/ex3.dir/osqueue.c.o" \
 "CMakeFiles/ex3.dir/threadpool.c.o"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
 
-ex3: CMakeFiles/ex3.dir/osqueue.c.o
 ex3: CMakeFiles/ex3.dir/test.c.o
+ex3: CMakeFiles/ex3.dir/osqueue.c.o
 ex3: CMakeFiles/ex3.dir/threadpool.c.o
 ex3: CMakeFiles/ex3.dir/build.make
 ex3: CMakeFiles/ex3.dir/link.txt
