@@ -84,9 +84,6 @@
 		<Unit filename="/home/ubuntu19/Dropbox/ex3/osqueue.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ubuntu19/Dropbox/ex3/test.c">
-			<Option target="ex3"/>
-		</Unit>
 		<Unit filename="/home/ubuntu19/Dropbox/ex3/threadPool.h">
 			<Option target="ex3"/>
 		</Unit>

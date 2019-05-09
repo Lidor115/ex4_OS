@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ex3.dir/test.c.o"
   "CMakeFiles/ex3.dir/osqueue.c.o"
   "CMakeFiles/ex3.dir/threadpool.c.o"
   "ex3.pdb"

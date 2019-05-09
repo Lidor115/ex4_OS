@@ -150,33 +150,6 @@ osqueue.c.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/osqueue.c.s
 .PHONY : osqueue.c.s
 
-test.o: test.c.o
-
-.PHONY : test.o
-
-# target to build an object file
-test.c.o:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/test.c.o
-.PHONY : test.c.o
-
-test.i: test.c.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/test.c.s
-.PHONY : test.c.s
-
 threadpool.o: threadpool.c.o
 
 .PHONY : threadpool.o
@@ -216,9 +189,6 @@ help:
 	@echo "... osqueue.o"
 	@echo "... osqueue.i"
 	@echo "... osqueue.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 	@echo "... threadpool.o"
 	@echo "... threadpool.i"
 	@echo "... threadpool.s"

@@ -11,7 +11,9 @@
 
 /*
 */
-typedef enum {DESTROY, WAIT, DONE, RUN} STATUS;
+typedef enum {
+    DESTROY, WAIT, DONE, NORMAL
+} STATUS;
 typedef struct {
     void (*computeFunc)(void *);
 
@@ -27,7 +29,7 @@ typedef struct thread_pool {
     int numOfThreads;
 } ThreadPool;
 
-void *threadFunc(void* func) ;
+void *threadFunc(void *func);
 
 void initThreadArray(int num, ThreadPool *threadPool);
 
@@ -36,5 +38,9 @@ ThreadPool *tpCreate(int numOfThreads);
 void tpDestroy(ThreadPool *threadPool, int shouldWaitForTasks);
 
 int tpInsertTask(ThreadPool *threadPool, void (*computeFunc)(void *), void *param);
+
+void writeError(ThreadPool *threadpool);
+
+void freeAllThreadPool(ThreadPool *threadpool);
 
 #endif

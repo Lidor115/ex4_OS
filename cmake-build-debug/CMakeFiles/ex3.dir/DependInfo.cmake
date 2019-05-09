@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/ubuntu19/Dropbox/ex3/osqueue.c" "/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles/ex3.dir/osqueue.c.o"
-  "/home/ubuntu19/Dropbox/ex3/test.c" "/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles/ex3.dir/test.c.o"
   "/home/ubuntu19/Dropbox/ex3/threadpool.c" "/home/ubuntu19/Dropbox/ex3/cmake-build-debug/CMakeFiles/ex3.dir/threadpool.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
