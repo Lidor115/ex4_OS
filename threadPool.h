@@ -1,3 +1,10 @@
+/*
+ * Lidor Alis
+ * 201025160
+ * Group: 06
+ */
+
+
 #ifndef __THREAD_POOL__
 #define __THREAD_POOL__
 

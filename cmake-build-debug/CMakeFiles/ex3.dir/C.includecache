@@ -13,9 +13,7 @@ stdio.h
 -
 stdlib.h
 -
-unistd.h
--
-stdlib.h
+assert.h
 -
 osqueue.h
 /home/ubuntu19/Dropbox/ex3/osqueue.h
@@ -36,13 +34,5 @@ stdlib.h
 pthread.h
 -
 stdbool.h
--
-
-/home/ubuntu19/Dropbox/ex3/threadpool.c
-unistd.h
--
-threadPool.h
-/home/ubuntu19/Dropbox/ex3/threadPool.h
-string.h
 -
 

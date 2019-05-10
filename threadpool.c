@@ -1,7 +1,8 @@
-//
-// Created by ubuntu19 on 5/5/19.
-//
-
+/*
+ * Lidor Alis
+ * 201025160
+ * Group: 06
+ */
 
 #include <unistd.h>
 #include "threadPool.h"
@@ -38,9 +39,6 @@ void freeAllThreadPool(ThreadPool *threadpool) {
     threadpool->osQueue = NULL;
     // free the array of the threads
     int i;
-    for (i = 0; i < threadpool->numOfThreads; ++i) {
-        threadpool->threadArray[i] = NULL;
-    }
     if (threadpool->threadArray != NULL) {
         free(threadpool->threadArray);
     }
@@ -108,8 +106,6 @@ void *threadFunc(void *func) {
         }
     }
 }
-
-
 
 /**
  * initialize the array of the threads

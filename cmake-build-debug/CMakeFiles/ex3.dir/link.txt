@@ -1,1 +1,1 @@
-/usr/bin/cc  -pthread -g   CMakeFiles/ex3.dir/osqueue.c.o CMakeFiles/ex3.dir/threadpool.c.o  -o ex3 
+/usr/bin/cc  -pthread -g   CMakeFiles/ex3.dir/osqueue.c.o CMakeFiles/ex3.dir/threadpool.c.o CMakeFiles/ex3.dir/test.c.o  -o ex3 
